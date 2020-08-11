@@ -1,0 +1,17 @@
+<%-include("../partials/header") %>
+
+	<div id="commentNew" class="container">
+		<div class="well">
+			<form action="/campgrounds/<%=campground._id%>/comments" method="post">
+				<div class="input-group">
+				  <input type="text" class="form-control" name="comm" placeholder="Add a comment">
+				  <span class="input-group-btn">
+					<button class="btn btn-default" type="submit">Add</button>
+				  </span>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+
+<%-include("../partials/footer") %>

@@ -1,0 +1,105 @@
+#message{
+	margin-top : 2rem;
+}
+
+#newCampButton{
+	border-radius: 5px;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+
+#newCampButton:hover{
+	background: #434343;
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+}
+
+#login{
+	min-width : 478px;
+	width : 40%;
+	margin-top: 3.5rem;
+}
+
+#loginForm{
+	padding : 0 5px;
+}
+
+#newCampForm{
+	margin-top : 3.5rem;
+}
+
+/* thumbnail of all the displayed camps */
+#card{
+	box-shadow: 0px -5px 50px 7.5px rgba(0, 0, 0, .15);
+	-moz-box-shadow: 0px -5px 50px 7.5px rgba(0, 0, 0, .15);
+	-webkit-box-shadow: 0px -5px 50px 7.5px rgba(0, 0, 0, .15);
+	transition : box-shadow 0.3s;
+	transition : -moz-box-shadow 0.3s;
+	transition : -webkit-box-shadow 0.3s;
+}
+
+#card:hover{
+	box-shadow: 0px -5px 30px 7.5px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0px -5px 30px 7.5px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 0px -5px 30px 7.5px rgba(0, 0, 0, .2);
+}
+
+
+#particularCamp{
+	margin-top : 20px;
+}
+
+#forCamp{
+	margin : 15px;
+}
+
+#commentNew{
+	margin-top: 3.5rem;
+}
+
+#commentAuthor{
+	margin-top : 1.2rem;
+}
+
+#commentText{
+	margin-bottom : 5px;
+}
+
+/* remove button for comment */
+.btn{
+	margin-bottom : 10px;
+	transition: all 0.4s ease 0s;
+}
+
+
+.navbar{
+	margin : 0;
+	border-radius : 0;
+	background-color : #414040;
+}
+
+.navbar-brand{
+	font-family: 'Lemonada', cursive;
+	font-size : 2.2rem;
+}
+
+.well{
+	box-shadow: 0px -5px 50px 0 rgba(0, 0, 0, .15);
+	-moz-box-shadow: 0px -5px 50px 0 rgba(0, 0, 0, .15);
+	-webkit-box-shadow: 0px -5px 50px 0 rgba(0, 0, 0, .15);
+}
+
+.thumbnail{
+	padding : 0;
+	border-bottom-left-radius : 12.5px;
+	border-bottom-right-radius : 12.5px;
+	box-shadow: 0px -5px 50px 7.5px rgba(0, 0, 0, .15);
+	-moz-box-shadow: 0px -5px 50px 7.5px rgba(0, 0, 0, .15);
+	-webkit-box-shadow: 0px -5px 50px 7.5px rgba(0, 0, 0, .15);
+}
+
+body{
+	font-family: 'Ubuntu', sans-serif;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelp Camp</title>
+		<link rel="stylesheet" 																					href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-			BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://kit.fontawesome.com/3c5cd3a288.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/styles.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+			  <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				  <span class="sr-only">Toggle navigation</span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/campgrounds">YelpCamp</a>
+			  </div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Sign Up</a></li>
+						<%} else{ %>
+						<li><a href="#"><%= currentUser.username %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						<% } %>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container text-center ">
+			<% if(error && error.length > 0){ %>
+				<div id="message" class="alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<%= error %>
+				</div>
+			<% }; %>
+			<% if(success && success.length > 0){ %>
+				<div id="message" class="alert alert-success alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<%= success %>
+				</div>
+			<% }; %>
+		</div>

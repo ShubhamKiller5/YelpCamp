@@ -1,0 +1,28 @@
+<%-include("partials/header") %>
+
+		<div id="login" class="container">
+			<div class="well">
+				<form id="loginForm" action="/register" method="post">
+					<div class="form-group input-group">
+						<span class="input-group-addon" id="basic-addon1"><i class="fas fa-user"></i></span>
+						<input class="form-control" name="username" type="text" placeholder="username">
+					</div>
+					<div class="form-group input-group">
+						<span class="input-group-addon" id="basic-addon1"><i class="fas fa-user-lock"></i></span>
+						<input class="form-control" name="password" type="password" placeholder="password">
+					</div>
+					<div class="form-group text-center">
+						<button class="btn btn-md btn-success btn-block">
+							Done
+						</button>
+					</div>
+				</form>
+				
+				<div class="text-center">
+					<a href="/login">Already have an account? Login</a>
+				</div>
+				
+			</div>
+		</div>
+
+<%-include("partials/footer") %>

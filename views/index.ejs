@@ -1,0 +1,35 @@
+<%-include("partials/header") %>
+
+
+<div class="jumbotron">
+	<div class="container text-center">
+		<h1>
+			Welcome to campground
+		</h1>
+		<p class="lead">
+			View our hand-picked campgrounds from all over INDIA
+		</p>
+		<a id="newCampButton" class="btn btn-lg btn-primary" href="/campgrounds/new"> Add New Campground</a>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<% campground.forEach(function(camps){ %>
+			<div class="col-md-4 col-sm-6">
+				<div id="card" class="thumbnail">
+					<img class="img-responsive" src="<%= camps.image %>">
+					
+					<div class="caption text-center">
+						<h4>
+							<%= camps.title %>
+						</h4>
+						<a href="/campgrounds/<%=camps._id%>" class="btn btn-md btn-primary">More Info</a>
+					</div>
+				</div>
+			</div>
+		<%});%>
+	</div>
+</div>
+
+<%-include("partials/footer") %>

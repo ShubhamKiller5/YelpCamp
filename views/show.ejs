@@ -1,0 +1,69 @@
+<%-include("partials/header") %>
+
+	<div id="particularCamp" class="container">
+		
+		<!-- Image area -->
+		<div class="thumbnail">
+			<img class="img-responsive" src="<%= campground.image %>">
+			<div class="caption text-center">
+				<p class="lead">
+					<strong><%= campground.title %></strong>
+				</p>
+				
+				<p class="lead text-left">
+					<%= campground.description %>
+				</p>
+				<p class="lead text-center">
+					<strong>BY - </strong>
+					<strong><em><%=campground.author.username%></em></strong>
+					
+				</p>
+			</div>
+			<% if(currentUser && currentUser.username === campground.author.username){ %>
+			<div id="forCamp">
+					<a href="/campgrounds/<%=campground._id%>/update" class="btn btn-md btn-primary">Edit</a>
+				<form action="/campgrounds/<%=campground._id%>?_method=DELETE" method="post" style="display:inline">
+					<button class="btn btn-md btn-danger">
+						Delete Camp
+					</button>
+				</form>
+			</div>
+			
+			<% }; %>
+		</div>
+		
+		
+		<!-- comment area -->
+		<h3 style="margin-top:55px; text-align:center;">
+			COMMENTS
+		</h3>
+		
+		<div class="well">
+			<a href="/campgrounds/<%=campground._id%>/comments/add">Add a new comment</a>
+			
+			<hr>
+			
+			<% campground.comment.forEach(function(comment){ %>
+			
+				<div id="commentAuthor">
+					<strong><%= comment.author.username %> </strong>
+				</div>
+				<p id="commentText">
+					<%= comment.text %>
+				</p>
+			
+			<% if(currentUser && (currentUser.username === campground.author.username || currentUser.username === comment.author.username)){ %>
+
+					<form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="post">
+						<button class="btn btn-danger btn-xs">
+							Remove
+						</button>
+					</form>
+			<% }; %>
+			<%}); %>
+			
+		</div>
+		
+	</div>
+
+<%-include("partials/footer") %>
