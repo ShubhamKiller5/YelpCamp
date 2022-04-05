@@ -67,6 +67,7 @@ app.use("/campgrounds/:id/comments",commentRoute);
 // 	console.log("server is on");
 // });
 
-app.listen(3000,function(){
-	console.log("server is on");
+const port = process.env.PORT || 3000;
+app.listen(port,function(){
+	console.log("serving on port "+port);
 });
