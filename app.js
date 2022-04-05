@@ -1,29 +1,28 @@
-var express        = require("express"),
-	app            = express(),
-	parser         = require("body-parser"),
-	mongoose       = require("mongoose"),
-	passport       = require("passport"),
-	LocalStrategy  = require("passport-local"),
-	passportmon    = require("passport-local-mongoose"),
-	methodOverride = require("method-override"),
-	flash          = require("connect-flash"),
-	camps          = require("./models/campground"),
-	User           = require("./models/user"),
-	comment        = require("./models/comment.js"),
-	middleware     = require("./middleware/middleware.js");
-	
+const express        = require("express"),
+	  app            = express(),
+	  parser         = require("body-parser"),
+	  mongoose       = require("mongoose"),
+	  passport       = require("passport"),
+	  LocalStrategy  = require("passport-local"),
+	  passportmon    = require("passport-local-mongoose"),
+	  methodOverride = require("method-override"),
+	  flash          = require("connect-flash"),
+	  camps          = require("./models/campground"),
+	  User           = require("./models/user"),
+	  comment        = require("./models/comment.js"),
+	  middleware     = require("./middleware/middleware.js");
 
-var indexRoute      = require("./routes/index"),
-	campgroundRoute = require("./routes/campground"),
-	commentRoute    = require("./routes/comment");
+const indexRoute      = require("./routes/index"),
+	  campgroundRoute = require("./routes/campground"),
+	  commentRoute    = require("./routes/comment");
 
-
+	  //mongodb+srv://Killer_5:oCoDBeqIjXUn6LrA@cluster0.tbkrh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 //mongoose configure
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect(process.env.LOCALDATABASE);
+mongoose.connect("mongodb+srv://Killer_5:oCoDBeqIjXUn6LrA@cluster0.tbkrh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 
 
 //setting up the express
@@ -64,6 +63,10 @@ app.use("/campgrounds/:id/comments",commentRoute);
 
 
 
-app.listen(process.env.PORT,process.env.IP,function(){
+// app.listen(process.env.PORT,process.env.IP,function(){
+// 	console.log("server is on");
+// });
+
+app.listen(3000,function(){
 	console.log("server is on");
 });
