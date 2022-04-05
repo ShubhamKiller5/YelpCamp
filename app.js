@@ -16,13 +16,13 @@ const indexRoute      = require("./routes/index"),
 	  campgroundRoute = require("./routes/campground"),
 	  commentRoute    = require("./routes/comment");
 
-	  //mongodb+srv://Killer_5:oCoDBeqIjXUn6LrA@cluster0.tbkrh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+	  
 //mongoose configure
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb+srv://Killer_5:oCoDBeqIjXUn6LrA@cluster0.tbkrh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+mongoose.connect(process.env.Db_Url);
 
 
 //setting up the express
