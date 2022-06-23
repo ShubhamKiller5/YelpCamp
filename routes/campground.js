@@ -30,6 +30,8 @@ router.post("/",function(req,res){
 		},
 		description : req.body.description
 	}
+	let date = new Date();
+	newCamp.lastUpdated = JSON.stringify(date);
 	camps.create(newCamp,function(err,done){
 		if(err) console.log(err);
 		else{
@@ -59,6 +61,8 @@ router.get("/:id/update",middleware.isLoggedIn,function(req,res){
 
 //Update campground
 router.post("/:id",function(req,res){
+	let date = new Date();
+	req.body.edit.lastUpdated = JSON.stringify(date);
 	camps.findByIdAndUpdate(req.params.id,req.body.edit,function(err,done){
 		if(err) console.log(err);
 		else 
