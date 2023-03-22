@@ -12,7 +12,7 @@ const express        = require("express"),
 	  comment        = require("./models/comment.js"),
 	  middleware     = require("./middleware/middleware.js");
 
-const indexRoute      = require("./routes/index"),
+const indexRoute      = require("./routes/indexroute"),
 	  campgroundRoute = require("./routes/campground"),
 	  commentRoute    = require("./routes/comment");
 
@@ -71,3 +71,4 @@ const port = process.env.PORT || 3000;
 app.listen(port,function(){
 	console.log("serving on port "+port);
 });
+module.exports = app;
